@@ -1,0 +1,12 @@
+{
+  "setup": {
+    "folder": "results",
+    "input_file": "C1.raw",
+    "shape": {
+      "x": 400,
+    	"y": 400,
+    	"z": 400
+    },
+    "voxel_size": 2.85e-6
+  }
+}

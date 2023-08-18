@@ -1,77 +1,74 @@
-<!-- This should be the location of the title of the repository, normally the short name -->
-# repo-template
+FlowDiscovery FlowSimulator
+=======================
 
-<!-- Build Status, is a great thing to have at the top of your repository, it shows that you take your CI/CD as first class citizens -->
-<!-- [![Build Status](https://travis-ci.org/jjasghar/ibm-cloud-cli.svg?branch=master)](https://travis-ci.org/jjasghar/ibm-cloud-cli) -->
+[![Build Status](https://app.travis-ci.com/IBM/flowdiscovery-simulator.svg?branch=master)](https://app.travis-ci.com/IBM/flowdiscovery-simulator)
 
-<!-- Not always needed, but a scope helps the user understand in a short sentance like below, why this repo exists -->
-## Scope
+For developers
+--------------
 
-The purpose of this project is to provide a template for new open source repositories.
+Read [CONTRIBUTING.md](CONTRIBUTING.md).
 
-<!-- A more detailed Usage or detailed explaination of the repository here -->
-## Usage
+Command-line tools
+------------------
 
-This repository contains some example best practices for open source repositories:
+| Name                                                    | Version      | License      |
+|:-------------------------------------------------------:|:------------:|:------------:|
+| [CMake](https://cmake.org)                              | `3.20.5`     | BSD-3-Clause |
+| [Coverage.py](https://coverage.readthedocs.io)          | `5.5.0`      | Apache-2.0   |
+| [Cpplint](https://github.com/cpplint/cpplint)           | `1.5.5`      | BSD-3-Clause |
+| [Doxygen](http://www.doxygen.org)                       | `1.9.1`      | GPL-2.0      |
+| [GCC](https://gcc.gnu.org)                              | `11.1.1`     | GPL-3.0      |
+| [gperftools](https://github.com/gperftools/gperftools)  | `2.9.1`      | BSD-3-Clause |
+| [LCOV](http://ltp.sourceforge.net/coverage)             | `1.14`       | GPL-2.0      |
+| [Ninja](https://ninja-build.org)                        | `1.10.2`     | Apache-2.0   |
+| [Pipenv](https://pipenv.pypa.io)                        | `2020.11.15` | MIT          |
 
-* [LICENSE](LICENSE)
-* [README.md](README.md)
-* [CONTRIBUTING.md](CONTRIBUTING.md)
-* [MAINTAINERS.md](MAINTAINERS.md)
-<!-- A Changelog allows you to track major changes and things that happen, https://github.com/github-changelog-generator/github-changelog-generator can help automate the process -->
-* [CHANGELOG.md](CHANGELOG.md)
+C++ libraries
+-------------
 
-> These are optional
+| Name                                                | Version   | License      |
+|:---------------------------------------------------:|:---------:|:------------:|
+| [Armadillo](http://arma.sourceforge.net)            | `10.6.0`  | Apache-2.0   |
+| [GoogleLog](https://github.com/google/glog)         | `0.3.5`   | BSD-3-Clause |
+| [GoogleTest](https://github.com/google/googletest)  | `1.10.0`  | BSD-3-Clause |
+| [RapidJSON](http://rapidjson.org)                   | `1.1.0`   | MIT          |
+| [SUNDIALS](https://github.com/LLNL/sundials)        | `5.6.1`   | BSD-3-Clause |
+| [TCLAP](http://tclap.sourceforge.net)               | `1.2.3`   | MIT          |
 
-<!-- The following are OPTIONAL, but strongly suggested to have in your repository. -->
-* [dco.yml](.github/dco.yml) - This enables DCO bot for you, please take a look https://github.com/probot/dco for more details.
-* [travis.yml](.travis.yml) - This is a example `.travis.yml`, please take a look https://docs.travis-ci.com/user/tutorial/ for more details.
+Python libraries
+----------------
 
-These may be copied into a new or existing project to make it easier for developers not on a project team to collaborate.
+| Name                                                                      | Version  | License      |
+|:-------------------------------------------------------------------------:|:--------:|:------------:|
+| [Celery](http://www.celeryproject.org)                                    | `5.1.2`  | BSD-3-Clause |
+| [ibm-cos-sdk](https://github.com/ibm/ibm-cos-sdk-python/)                 | `2.10.0` | Apache-2.0   |
+| [jsonschema](https://github.com/Julian/jsonschema)                        | `3.2.0`  | MIT          |
+| [matplotlib](http://matplotlib.org)                                       | `3.4.2`  | Python-2.0   |
+| [numpy-stl](https://github.com/WoLpH/numpy-stl)                           | `2.16.0` | BSD-3-Clause |
+| [numpy](http://www.numpy.org)                                             | `1.21.1` | BSD-3-Clause |
+| [OpenPNM](http://openpnm.org)                                             | `2.7.0`  | MIT          |
+| [plumbum](https://plumbum.readthedocs.io)                                 | `1.7.0`  | MIT          |
+| [scikit-image](http://scikit-image.org)                                   | `0.18.2` | BSD-3-Clause |
+| [scipy](https://www.scipy.org)                                            | `1.7.0`  | BSD-3-Clause |
 
-<!-- A notes section is useful for anything that isn't covered in the Usage or Scope. Like what we have below. -->
-## Notes
+JSON Schemas
+------------
 
-**NOTE: While this boilerplate project uses the Apache 2.0 license, when
-establishing a new repo using this template, please use the
-license that was approved for your project.**
+| Name                                                | Version   | License      |
+|:---------------------------------------------------:|:---------:|:------------:|
+| [JSON Graph Format](http://jsongraphformat.info/)   | `3`       | MIT          |
 
-**NOTE: This repository has been configured with the [DCO bot](https://github.com/probot/dco).
-When you set up a new repository that uses the Apache license, you should
-use the DCO to manage contributions. The DCO bot will help enforce that.
-Please contact one of the IBM GH Org stewards.**
+License
+------------
 
-<!-- Questions can be useful but optional, this gives you a place to say, "This is how to contact this project maintainers or create PRs -->
-If you have any questions or issues you can create a new [issue here][issues].
-
-Pull requests are very welcome! Make sure your patches are well tested.
-Ideally create a topic branch for every separate change you make. For
-example:
-
-1. Fork the repo
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
-
-## License
-
-All source files must include a Copyright and License header. The SPDX license header is 
-preferred because it can be easily scanned.
+<!-- All source files must include a Copyright and License header. The SPDX license header is
+preferred because it can be easily scanned. -->
 
 If you would like to see the detailed LICENSE click [here](LICENSE).
 
 ```text
 #
-# Copyright IBM Corp. 2020-
-# SPDX-License-Identifier: Apache2.0
+# Copyright 2020- IBM Inc. All rights reserved
+# SPDX-License-Identifier: Apache-2.0
 #
 ```
-## Authors
-
-Optionally, you may include a list of authors, though this is redundant with the built-in
-GitHub list of contributors.
-
-- Author: New OpenSource IBMer <new-opensource-ibmer@ibm.com>
-
-[issues]: https://github.com/IBM/repo-template/issues/new

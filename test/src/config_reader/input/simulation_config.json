@@ -1,0 +1,53 @@
+{
+  "simulation": {
+    "wettability":
+      {
+        "name": "water/oil/rock",
+        "properties": {
+          "contact_angle": 0.0,
+          "linear_mk": 108.63
+        }
+      },
+    "interface":
+      {
+        "name": "water/oil",
+        "properties": {
+          "interfacial_tension": 0.06347
+        }
+      },
+    "fluid": [
+      {
+        "name": "water",
+        "viscosity_behaviour": "pure_water"
+      },
+      {
+        "name": "oil",
+        "viscosity_behaviour": "constant",
+        "properties": {
+          "dynamic_viscosity": 1.002e-4
+        }
+      }
+    ],
+    "algorithm": {
+      "name": "dynamic",
+      "model": "linear_molecular_kinetics",
+      "initial_time": 0.0,
+      "final_time": 19.2,
+      "time_step_size": 0.59375,
+      "relative_tolerance": 1.0e-4,
+      "absolute_link_tolerance": 1.0e-3,
+      "absolute_node_tolerance": 1.0e-3,
+      "resume": false
+    },
+    "experiment": {
+      "flow_axis": 0,
+      "temperature": 340,
+      "absolute_pressure": 101325.0,
+      "boundary_thickness": 1,
+      "boundary_condition": {
+        "driving_force": "pressure_gradient_closed",
+        "value": 10132.5
+      }
+    }
+  }
+}

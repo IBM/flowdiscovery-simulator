@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[requires]
+python_version = "3.8"
+
+[dev-packages]
+cpplint = "*"
+mayavi = "*"
+openpnm = "*"
+scipy = "*"
+
+[packages]
+celery = "*"
+coverage = "*"
+h5py = "*"
+ibm-cos-sdk = "*"
+jsonschema = "*"
+matplotlib = "*"
+numpy = "*"
+numpy-stl = "*"
+plumbum = "*"
+scikit-image = "*"

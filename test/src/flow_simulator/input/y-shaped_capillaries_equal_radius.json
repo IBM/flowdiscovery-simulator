@@ -1,0 +1,83 @@
+{
+  "graph": {
+    "metadata": {
+      "number_of_nodes": 4,
+      "number_of_links": 3
+    },
+    "nodes": [
+      {
+        "id": "0",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 2,
+            "y": 0,
+            "z": 0
+          }
+        }
+      },
+      {
+        "id": "1",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 2,
+            "y": 0,
+            "z": 1
+          }
+        }
+      },
+      {
+        "id": "2",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 1,
+            "y": 0,
+            "z": 2
+          }
+        }
+      },
+      {
+        "id": "3",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 3,
+            "y": 0,
+            "z": 2
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "0",
+        "source": "0",
+        "target": "1",
+        "metadata": {
+          "link_length": 1,
+          "link_squared_radius": 1
+        }
+      },
+      {
+        "id": "1",
+        "source": "1",
+        "target": "2",
+        "metadata": {
+          "link_length": 1.414213562373095,
+          "link_squared_radius": 1
+        }
+      },
+      {
+        "id": "2",
+        "source": "1",
+        "target": "3",
+        "metadata": {
+          "link_length": 1.414213562373095,
+          "link_squared_radius": 1
+        }
+      }
+    ]
+  }
+}

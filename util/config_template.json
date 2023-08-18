@@ -1,0 +1,37 @@
+{
+  "setup": {
+    "folder": "results",
+    "input_file": "C1.raw",
+    "shape": {
+      "x": 400,
+      "y": 400,
+      "z": 400
+    },
+    "voxel_size": 2.85e-6
+  },
+  "simulation": {
+    "fluid": [
+      {
+        "name": "water",
+        "viscosity_behaviour": "constant",
+        "properties": {
+          "dynamic_viscosity": 1.002e-3
+        }
+      }
+    ],
+    "algorithm": {
+      "name": "static",
+      "model": "poiseuille"
+    },
+    "experiment": {
+      "flow_axis": 0,
+      "temperature": 340,
+      "absolute_pressure": 101325.0,
+      "boundary_thickness": 1,
+      "boundary_condition": {
+        "driving_force": "pressure_gradient",
+        "value": 1.0e8
+      }
+    }
+  }
+}

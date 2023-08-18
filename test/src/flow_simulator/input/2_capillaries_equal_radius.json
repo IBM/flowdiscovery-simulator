@@ -1,0 +1,63 @@
+{
+  "graph": {
+    "metadata": {
+      "number_of_nodes": 3,
+      "number_of_links": 2
+    },
+    "nodes": [
+      {
+        "id": "0",
+        "metadata": {
+          "node_squared_radius": 1.0,
+          "node_coordinates": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "1",
+        "metadata": {
+          "node_squared_radius": 1.0,
+          "node_coordinates": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 1.0
+          }
+        }
+      },
+      {
+        "id": "2",
+        "metadata": {
+          "node_squared_radius": 1.0,
+          "node_coordinates": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 2.0
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "0",
+        "source": "0",
+        "target": "1",
+        "metadata": {
+          "link_length": 1,
+          "link_squared_radius": 1
+        }
+      },
+      {
+        "id": "1",
+        "source": "1",
+        "target": "2",
+        "metadata": {
+          "link_length": 1,
+          "link_squared_radius": 1
+        }
+      }
+    ]
+  }
+}

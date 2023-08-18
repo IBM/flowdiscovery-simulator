@@ -1,0 +1,332 @@
+{
+  "graph": {
+    "metadata": {
+      "number_of_nodes": 16,
+      "number_of_links": 16
+    },
+    "nodes": [
+      {
+        "id": "0",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "1",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 0.0,
+            "y": 1.1547005383792517,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "2",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 2.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "3",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 2.0,
+            "y": 1.1547005383792517,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "4",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 4.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "5",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 4.0,
+            "y": 1.1547005383792517,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "6",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 1.0,
+            "y": 1.7320508075688772,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "7",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 1.0,
+            "y": 2.886751345948129,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "8",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 3.0,
+            "y": 1.7320508075688772,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "9",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 3.0,
+            "y": 2.886751345948129,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "10",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 0.0,
+            "y": 3.4641016151377544,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "11",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 0.0,
+            "y": 4.618802153517006,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "12",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 2.0,
+            "y": 3.4641016151377544,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "13",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 2.0,
+            "y": 4.618802153517006,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "14",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 4.0,
+            "y": 3.4641016151377544,
+            "z": 0.0
+          }
+        }
+      },
+      {
+        "id": "15",
+        "metadata": {
+          "node_squared_radius": 1,
+          "node_coordinates": {
+            "x": 4.0,
+            "y": 4.618802153517006,
+            "z": 0.0
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "0",
+        "source": "0",
+        "target": "1",
+        "metadata": {
+          "link_length": 1.1547005383792517,
+          "link_squared_radius": 10.560107606459104
+        }
+      },
+      {
+        "id": "1",
+        "source": "1",
+        "target": "6",
+        "metadata": {
+          "link_length": 1.1547005383792515,
+          "link_squared_radius": 9.094978308294314
+        }
+      },
+      {
+        "id": "2",
+        "source": "2",
+        "target": "3",
+        "metadata": {
+          "link_length": 1.1547005383792517,
+          "link_squared_radius": 8.848232619408845
+        }
+      },
+      {
+        "id": "3",
+        "source": "3",
+        "target": "6",
+        "metadata": {
+          "link_length": 1.1547005383792515,
+          "link_squared_radius": 10.30671725076661
+        }
+      },
+      {
+        "id": "4",
+        "source": "3",
+        "target": "8",
+        "metadata": {
+          "link_length": 1.1547005383792515,
+          "link_squared_radius": 8.19997985095944
+        }
+      },
+      {
+        "id": "5",
+        "source": "4",
+        "target": "5",
+        "metadata": {
+          "link_length": 1.1547005383792517,
+          "link_squared_radius": 8.939332002035524
+        }
+      },
+      {
+        "id": "6",
+        "source": "5",
+        "target": "8",
+        "metadata": {
+          "link_length": 1.1547005383792515,
+          "link_squared_radius": 10.98802065322893
+        }
+      },
+      {
+        "id": "7",
+        "source": "6",
+        "target": "7",
+        "metadata": {
+          "link_length": 1.1547005383792515,
+          "link_squared_radius": 10.4147288606562
+        }
+      },
+      {
+        "id": "8",
+        "source": "7",
+        "target": "10",
+        "metadata": {
+          "link_length": 1.1547005383792512,
+          "link_squared_radius": 8.592856282451281
+        }
+      },
+      {
+        "id": "9",
+        "source": "7",
+        "target": "12",
+        "metadata": {
+          "link_length": 1.1547005383792512,
+          "link_squared_radius": 8.002397726332886
+        }
+      },
+      {
+        "id": "10",
+        "source": "8",
+        "target": "9",
+        "metadata": {
+          "link_length": 1.1547005383792515,
+          "link_squared_radius": 9.64478134151779
+        }
+      },
+      {
+        "id": "11",
+        "source": "9",
+        "target": "12",
+        "metadata": {
+          "link_length": 1.1547005383792512,
+          "link_squared_radius": 6.88652657188372
+        }
+      },
+      {
+        "id": "12",
+        "source": "9",
+        "target": "14",
+        "metadata": {
+          "link_length": 1.1547005383792512,
+          "link_squared_radius": 14.555382118517267
+        }
+      },
+      {
+        "id": "13",
+        "source": "10",
+        "target": "11",
+        "metadata": {
+          "link_length": 1.1547005383792512,
+          "link_squared_radius": 8.717473751199734
+        }
+      },
+      {
+        "id": "14",
+        "source": "12",
+        "target": "13",
+        "metadata": {
+          "link_length": 1.1547005383792512,
+          "link_squared_radius": 11.570893038718545
+        }
+      },
+      {
+        "id": "15",
+        "source": "14",
+        "target": "15",
+        "metadata": {
+          "link_length": 1.1547005383792512,
+          "link_squared_radius": 9.946014387088624
+        }
+      }
+    ]
+  }
+}

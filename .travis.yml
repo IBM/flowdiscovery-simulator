@@ -1,23 +1,55 @@
-language: ruby
+os: linux
 
-before_install:
-  - echo "#"
-  - echo "#"
-  - echo "TravisCI is unbelively powerful, but you need to do your research first."
-  - echo "#"
-  - echo "#"
+dist: bionic
+
+language: python
+
+python:
+  - "3.8"
+
+services: docker
+
+git:
+  depth: 5
+
+branches:
+  except:
+    - /^v(\d+\.?)+/
+
+addons:
+  apt:
+    update: true
+    packages:
+      - gettext
+
+install:
+  # Install C++ and Python linters
+  - pip install --quiet --upgrade pip
+  - pip install --quiet cpplint flake8
+
+before_script:
+  # Define branch-dependent environment variable
+  - export TAG="${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}";
+
+  # Download test input files
+  - git lfs install
+  - git lfs checkout
 
 script:
-  - echo "#"
-  - echo "#"
-  - echo "Please take a look https://docs.travis-ci.com/user/tutorial/ for you options."
-  - echo "#"
-  - echo "#"
+  # Run C++ and Python linters
+  - cpplint --recursive --quiet --linelength=100 --extensions=h,cc --filter=-runtime/references,-whitespace/empty_loop_body src/ test/
+  - flake8 --max-line-length=100 util/
 
+  # Run regression and coverage tests inside container
+  - docker build --tag flow-simulator:"$TAG"
+                 --build-arg USER_ID="$USER_ID"
+                 .
+  - docker run flow-simulator:"$TAG" ./bin/flow-simulator-test.x
+  - docker run flow-simulator:"$TAG" cmake --build ./build --target coverage
 
-after_success:
-  - echo "#"
-  - echo "#"
-  - echo "Don't forget to enable it in the GitHub repository also.."
-  - echo "#"
-  - echo "#"
+after_script:
+  - pip list
+
+env:
+  global:
+    - USER_ID=1000630000

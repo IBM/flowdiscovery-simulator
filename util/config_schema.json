@@ -1,0 +1,482 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "validation_schema",
+  "description": "JSON schema for config_template.json",
+  "type": "object",
+  "properties": {
+    "setup": {
+      "title": "Setup-related configuration parameters (step 1)",
+      "type": "object",
+      "required": [
+        "folder",
+        "input_file",
+        "shape",
+        "voxel_size"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "folder": {
+          "type": "string"
+        },
+        "input_file": {
+          "type": "string"
+        },
+        "shape": {
+          "type": "object",
+          "required": [
+            "x",
+            "y",
+            "z"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "x": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "y": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "z": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "voxel_size": {
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMinimum": true
+        }
+      }
+    },
+    "simulation": {
+      "title": "Simulation-related configuration parameters (step 4)",
+      "type": "object",
+      "required": [
+        "fluid",
+        "algorithm",
+        "experiment"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "wettability": {
+          "type": "object",
+          "required": [
+            "name",
+            "properties"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "properties": {
+              "type": "object",
+              "required": [
+                "contact_angle",
+                "linear_mk"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "contact_angle": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 180.0
+                },
+                "linear_mk": {
+                  "type": "number",
+                  "minimum": 0.0
+                }
+              }
+            }
+          }
+        },
+        "interface": {
+          "type": "object",
+          "required": [
+            "name",
+            "properties"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "properties": {
+              "type": "object",
+              "required": [
+                "interfacial_tension"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "interfacial_tension": {
+                  "type": "number",
+                  "minimum": 0.0
+                }
+              }
+            }
+          }
+        },
+        "fluid": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "anyOf": [
+              {
+                "type": "object",
+                "required": [
+                  "name",
+                  "viscosity_behaviour",
+                  "properties"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "viscosity_behaviour": {
+                    "enum": [
+                      "constant"
+                    ]
+                  },
+                  "properties": {
+                    "type": "object",
+                    "required": [
+                      "dynamic_viscosity"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "dynamic_viscosity": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true
+                      },
+                      "density": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "required": [
+                  "name",
+                  "viscosity_behaviour"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "viscosity_behaviour": {
+                    "enum": [
+                      "pure_water",
+                      "supercritical_CO2",
+                      "seawater"
+                    ]
+                  },
+                  "properties": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "density": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "required": [
+                  "name",
+                  "viscosity_behaviour",
+                  "properties"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "viscosity_behaviour": {
+                    "enum": [
+                      "carbonated_water"
+                    ]
+                  },
+                  "properties": {
+                    "type": "object",
+                    "required": [
+                      "CO2_weight_percentage"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "density": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true
+                      },
+                      "CO2_weight_percentage": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true,
+                        "maximum": 100,
+                        "exclusiveMaximum": true
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "required": [
+                  "name",
+                  "viscosity_behaviour",
+                  "properties"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "viscosity_behaviour": {
+                    "enum": [
+                      "brine"
+                    ]
+                  },
+                  "properties": {
+                    "type": "object",
+                    "required": [
+                      "salinity_ppm"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "density": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true
+                      },
+                      "salinity_ppm": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true,
+                        "maximum": 1.0e6,
+                        "exclusiveMaximum": true
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "required": [
+                  "name",
+                  "viscosity_behaviour",
+                  "properties"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "viscosity_behaviour": {
+                    "enum": [
+                      "carbonated_brine"
+                    ]
+                  },
+                  "properties": {
+                    "type": "object",
+                    "required": [
+                      "salinity_ppm",
+                      "CO2_weight_percentage"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "density": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true
+                      },
+                      "salinity_ppm": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true,
+                        "maximum": 1.0e6,
+                        "exclusiveMaximum": true
+                      },
+                      "CO2_weight_percentage": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true,
+                        "maximum": 100,
+                        "exclusiveMaximum": true
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "algorithm": {
+          "title": "Simulation-related algorithm parameters",
+          "anyOf": [
+            {
+              "title": "One fluid simulation",
+              "type": "object",
+              "required": [
+                "name",
+                "model"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "enum": [
+                    "static"
+                  ]
+                },
+                "model": {
+                  "type": "string",
+                  "enum": [
+                    "poiseuille",
+                    "hydrostatic"
+                  ]
+                }
+              }
+            },
+            {
+              "title": "Two fluid simulation",
+              "type": "object",
+              "required": [
+                "name",
+                "model",
+                "initial_time",
+                "final_time",
+                "time_step_size",
+                "relative_tolerance",
+                "absolute_link_tolerance",
+                "absolute_node_tolerance",
+                "resume"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "enum": [
+                    "dynamic"
+                  ]
+                },
+                "model": {
+                  "type": "string",
+                  "enum": [
+                    "linear_molecular_kinetics"
+                  ]
+                },
+                "initial_time": {
+                  "type": "number",
+                  "minimum": 0.0
+                },
+                "final_time": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "exclusiveMinimum": true
+                },
+                "time_step_size": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "exclusiveMinimum": true
+                },
+                "relative_tolerance": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "exclusiveMinimum": true
+                },
+                "absolute_link_tolerance": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "exclusiveMinimum": true
+                },
+                "absolute_node_tolerance": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "exclusiveMinimum": true
+                },
+                "resume": {
+                  "type": "boolean"
+                }
+              }
+            }
+          ]
+        },
+        "experiment": {
+          "title": "Simulation-related experiments parameters",
+          "type": "object",
+          "required": [
+            "flow_axis",
+            "absolute_pressure",
+            "boundary_thickness",
+            "boundary_condition"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "flow_axis": {
+              "type": "integer",
+              "enum": [
+                0,
+                1,
+                2
+              ]
+            },
+            "temperature": {
+              "type": "number",
+              "minimum": 0,
+              "exclusiveMinimum": true
+            },
+            "absolute_pressure": {
+              "type": "number",
+              "minimum": 0,
+              "exclusiveMinimum": true
+            },
+            "boundary_thickness": {
+              "type": "integer",
+              "minimum": 1,
+              "exclusiveMinimum": false
+            },
+            "boundary_condition": {
+              "type": "object",
+              "required": [
+                "driving_force",
+                "value"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "driving_force": {
+                  "type": "string",
+                  "enum": [
+                    "pressure_gradient",
+                    "flow_rate_closed",
+                    "flow_rate_open",
+                    "pressure_gradient_closed",
+                    "pressure_gradient_open"
+                  ]
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

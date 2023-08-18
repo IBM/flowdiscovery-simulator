@@ -1,0 +1,8 @@
+/.tags*
+/.vagrant/
+/.vscode/
+/*.tmp
+CMakeSettings.json
+honeycomb_N1222L1763.json
+*.pyc
+.DS_Store
