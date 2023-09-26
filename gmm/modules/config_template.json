@@ -1,0 +1,37 @@
+{
+    "setup": {
+        "folder": "results",
+        "input_file": "centerlines.json",
+        "shape": {
+            "x": 100,
+            "y": 100,
+            "z": 100
+        },
+        "voxel_size": 1e-06
+    },
+    "simulation": {
+        "fluid": [
+            {
+                "name": "water",
+                "viscosity_behaviour": "constant",
+                "properties": {
+                    "dynamic_viscosity": 8.9e-4
+                }
+            }
+        ],
+        "algorithm": {
+            "name": "static",
+            "model": "poiseuille"
+        },
+        "experiment": {
+            "flow_axis": 1,
+            "temperature": 300,
+            "absolute_pressure": 101325.0,
+            "boundary_thickness": 1,
+            "boundary_condition": {
+                "driving_force": "pressure_gradient",
+                "value": 10132.5
+            }
+        }
+    }
+}

@@ -1,0 +1,122 @@
+{
+  "setup": {
+    "information": "Geometry evolution due to calcite precipitation.",
+    "additional_information_1": "Constant rate input model in Lasaga (1981).",
+    "additional_information_2": "Demo clogging: 1x(precipitation_rate)",
+    "time_steps": 10,
+    "processes": {
+      "deposition": 0,
+      "dissolution": 0,
+      "erosion": 0,
+      "precipitation": 1
+    },
+    "outputs": {
+      "flow": [
+        "pressure_gradients",
+        "reynolds_number",
+        "wall_shear_stress"
+      ],
+      "geometry": [
+        "accumulated_volume",
+        "aspect_ratio",
+        "link_length",
+        "link_radius",
+        "porosity",
+        "reactive_area",
+        "total_accumulated_volume",
+        "void_space_volume",
+        "void_space_volume_ratio",
+        "void_space_volume_variation"
+      ],
+      "static": [
+        "flow_rate",
+        "flow_speed",
+        "permeability",
+        "pressure"
+      ],
+      "precipitation": [
+        "precipitation_number_first_clogged",
+        "precipitation_clogging_evolution",
+        "precipitation_clogging_onset",
+        "precipitation_clogging_time_step"
+      ]
+    }
+  },
+  "simulation": {
+    "flow": {
+      "algorithm": {
+        "name": "static",
+        "model": "poiseuille"
+      },
+      "experiment": {
+        "flow_axis": 0,
+        "temperature": 300,
+        "absolute_pressure": 101325.0,
+        "boundary_thickness": 1,
+        "boundary_condition": {
+          "driving_force": "pressure_gradient",
+          "value": 10132.5
+        }
+      }
+    },
+    "sample":{
+      "sample_name": "Berea_100x100x100",
+      "inlet_links_identification": {
+        "pressure_threshold_method": "inlet_nodes"
+      },
+      "parameters": {
+        "initial_porosity": {
+          "porosity_method" : "calculation"
+        },
+        "minimum_link_radius": 0.5,
+        "sample_origin": [0, 0, 0],
+        "sample_size": [100, 100, 100],
+        "voxel_size": 2.25e-6
+      }
+    },
+    "phases": {
+      "liquid": {
+        "liquid_name": "brine",
+        "viscosity_behaviour": "constant",
+        "properties": {
+          "liquid_density": 1100,
+          "liquid_dynamic_viscosity": 1.5e-3
+        }
+      },
+      "solid": {
+        "solid_name": "calcite",
+        "properties": {
+          "solid_density": 2710,
+          "calcium_density": 1550,
+          "solid_molar_weight": 0.1,
+          "calcium_molar_weight": 0.040078
+        }
+      }
+    },
+    "processes": {
+      "precipitation": {
+        "clogging": {
+          "simulation_stop_criteria": "inlet_links"
+        },
+        "model": {
+          "name": "noiriel2012",
+          "precipitation_rate_method": "constant_precipitation_rate_input",
+          "regression_method": "no_regression"
+        },
+        "parameters": {
+          "experiment_factor": 1,
+          "precipitation_rate": -5.6055744982399436693e-7,
+          "precipitation_reaction_time": 1200,
+          "experiment_parameters_information": [
+            "benchmark SC-4",
+            "validation Tang-11"
+          ]
+        },
+        "precipitation_references": [
+          "Lasaga, A. and Kirkpatrick, J. (1981)",
+          "Noiriel, et al. (2012)"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "validation_schema",
+  "description": "JSON schema for case_*.json",
+  "type": "object",
+  "properties": {
+    "setup": {
+      "type": "object",
+      "properties": {
+        "information": {
+          "type": "string"
+        },
+        "time_steps": {
+          "type": "integer"
+        },
+        "phenomena": {
+          "type": "object",
+          "properties": {
+            "erosion": {
+              "type": "boolean"
+            },
+            "deposition": {
+              "type": "boolean"
+            },
+            "dissolution": {
+              "type": "boolean"
+            },
+            "precipitation": {
+              "type": "boolean"
+            },
+            "nucleation": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "deposition",
+            "dissolution",
+            "erosion",
+            "nucleation",
+            "precipitation"
+          ]
+        },
+        "outputs": {
+          "type": "object",
+          "properties": {
+            "centerlines": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "erosion": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "flow": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "geometry": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "static": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "centerlines",
+            "erosion",
+            "flow",
+            "geometry",
+            "static"
+          ]
+        }
+      },
+      "required": [
+        "information",
+        "outputs",
+        "phenomena",
+        "time_steps"
+      ]
+    },
+    "simulation": {
+      "type": "object",
+      "properties": {
+        "solid": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "properties": {
+              "type": "object",
+              "properties": {
+                "density": {
+                  "type": "integer"
+                },
+                "molar_weight": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "density",
+                "molar_weight"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "properties"
+          ]
+        },
+        "liquid": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "properties": {
+              "type": "object",
+              "properties": {
+                "density": {
+                  "type": "integer"
+                },
+                "dynamic_viscosity": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "density",
+                "dynamic_viscosity"
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "properties"
+          ]
+        },
+        "erosion": {
+          "type": "object",
+          "properties": {
+            "model": {
+              "type": "string"
+            },
+            "references": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "method": {
+              "type": "string"
+            },
+            "threshold": {
+              "type": "string"
+            },
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "erosion_coefficient": {
+                  "type": "number"
+                },
+                "reaction_time": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "erosion_coefficient",
+                "reaction_time"
+              ]
+            }
+          },
+          "required": [
+            "method",
+            "model",
+            "parameters",
+            "references",
+            "threshold"
+          ]
+        },
+        "dissolution": {
+          "type": "object",
+          "properties": {
+            "model": {
+              "type": "string"
+            },
+            "references": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "method": {
+              "type": "string"
+            },
+            "rate_computation": {
+              "type": "string"
+            },
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "information": {
+                  "type": "object",
+                  "properties": {
+                    "benchmark": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "benchmark"
+                  ]
+                },
+                "rate_constant": {
+                  "type": "number"
+                },
+                "activity_coefficient": {
+                  "type": "number"
+                },
+                "inlet_concentration": {
+                  "type": "number"
+                },
+                "rate_dissolution": {
+                  "type": "number"
+                },
+                "reaction_time": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "activity_coefficient",
+                "information",
+                "inlet_concentration",
+                "rate_constant",
+                "rate_dissolution",
+                "reaction_time"
+              ]
+            }
+          },
+          "required": [
+            "method",
+            "model",
+            "parameters",
+            "rate_computation",
+            "references"
+          ]
+        },
+        "precipitation": {
+          "type": "object",
+          "properties": {
+            "model": {
+              "type": "string"
+            },
+            "references": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "method": {
+              "type": "string"
+            },
+            "rate": {
+              "type": "string"
+            },
+            "correlation": {
+              "type": "string"
+            },
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "information": {
+                  "type": "object",
+                  "properties": {
+                    "benchmark": {
+                      "type": "string"
+                    },
+                    "validation": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "benchmark",
+                    "validation"
+                  ]
+                },
+                "reaction_time": {
+                  "type": "integer"
+                },
+                "rate_precipitation": {
+                  "type": "number"
+                },
+                "clogging": {
+                  "type": "object",
+                  "properties": {
+                    "method": {
+                      "type": "string"
+                    },
+                    "minimum_link_radius": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "method",
+                    "minimum_link_radius"
+                  ]
+                }
+              },
+              "required": [
+                "information",
+                "clogging",
+                "rate_precipitation",
+                "reaction_time"
+              ]
+            }
+          },
+          "required": [
+            "correlation",
+            "method",
+            "model",
+            "parameters",
+            "rate",
+            "references"
+          ]
+        }
+      },
+      "required": [
+        "liquid",
+        "solid"
+      ]
+    }
+  },
+  "required": [
+    "setup",
+    "simulation"
+  ]
+}

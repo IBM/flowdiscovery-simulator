@@ -1,0 +1,108 @@
+{
+  "setup": {
+    "experiment_name": "Geometry evolution due to calcite dissolution.",
+    "experiment_description": "Geometry evolution due to calcite dissolution.",
+    "time_steps": 10,
+    "processes": {
+      "deposition": 0,
+      "dissolution": 1,
+      "erosion": 0,
+      "precipitation": 0
+    },
+    "outputs": {
+      "flow": [
+        "pressure_gradients",
+        "reynolds_number",
+        "wall_shear_stress"
+      ],
+      "geometry": [
+        "accumulated_volume",
+        "aspect_ratio",
+        "link_length",
+        "modified_link_radius",
+        "porosity",
+        "reactive_area",
+        "total_accumulated_volume",
+        "void_space_volume",
+        "void_space_volume_ratio",
+        "void_space_volume_variation"
+      ],
+      "static": [
+        "flow_rate",
+        "flow_speed",
+        "permeability",
+        "pressure"
+      ]
+    }
+  },
+  "simulation": {
+    "flow": {
+      "algorithm": {
+        "name": "static",
+        "model": "poiseuille"
+      },
+      "experiment": {
+        "flow_axis": 0,
+        "temperature": 300,
+        "absolute_pressure": 101325.0,
+        "boundary_thickness": 1,
+        "boundary_condition": {
+          "driving_force": "pressure_gradient",
+          "value": 10132.5
+        }
+      }
+    },
+    "sample":{
+      "sample_name": "Berea_100x100x100",
+      "inlet_links_identification": {
+        "pressure_threshold_method": "inlet_nodes"
+      },
+      "parameters": {
+        "initial_porosity": {
+          "porosity_method" : "calculation"
+        },
+        "minimum_link_radius": 0.5,
+        "sample_origin": [0, 0, 0],
+        "sample_size": [100, 100, 100],
+        "voxel_size": 2.25e-6
+      }
+    },
+    "phases": {
+      "liquid": {
+        "liquid_name": "brine",
+        "viscosity_behaviour": "constant",
+        "properties": {
+          "liquid_density": 1100,
+          "liquid_dynamic_viscosity": 1.5e-3
+        }
+      },
+      "solid": {
+        "solid_name": "calcite",
+        "properties": {
+          "solid_density": 2710,
+          "solid_molar_weight": 0.1
+        }
+      }
+    },
+    "processes": {
+      "dissolution": {
+        "model": {
+          "name": "molins2021",
+          "dissolution_rate_method": "calculation"
+        },
+        "parameters": {
+          "activity_coefficient": 1e-3,
+          "dissolution_rate_constant": 0.10,
+          "dissolution_reaction_time": 2,
+          "inlet_concentration": 1.26e-11,
+          "dissolution_parameters_information":[
+            "benchmark III"
+          ]
+        },
+        "dissolution_references": [
+          "Molins, S., et al. (2014); (2017); (2021)"
+        ]
+      }
+    }
+  }
+}

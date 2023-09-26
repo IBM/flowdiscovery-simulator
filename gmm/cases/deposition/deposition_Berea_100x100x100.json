@@ -1,0 +1,127 @@
+{
+  "setup": {
+    "experiment_name": "Geometry evolution due to calcite erosion",
+    "experiment_description": "Saling correlation according to the erosion and deposition law",
+    "time_steps": 10,
+    "processes": {
+      "deposition": 1,
+      "dissolution": 0,
+      "erosion": 0,
+      "precipitation": 0
+    },
+    "outputs": {
+      "deposition": [
+        "erosion_onset",
+        "erosion_rate",
+        "erosion_shear_stress"
+      ],
+      "flow": [
+        "pressure_gradients",
+        "reynolds_number",
+        "wall_shear_stress"
+      ],
+      "geometry": [
+        "accumulated_volume",
+        "aspect_ratio",
+        "link_length",
+        "link_radius",
+        "porosity",
+        "reactive_area",
+        "total_accumulated_volume",
+        "void_space_volume",
+        "void_space_volume_ratio",
+        "void_space_volume_variation"
+      ],
+      "static": [
+        "flow_rate",
+        "flow_speed",
+        "permeability",
+        "pressure"
+      ]
+    }
+  },
+  "simulation": {
+    "flow": {
+      "algorithm": {
+        "name": "static",
+        "model": "poiseuille"
+      },
+      "experiment": {
+        "flow_axis": 0,
+        "temperature": 300,
+        "absolute_pressure": 101325.0,
+        "boundary_thickness": 1,
+        "boundary_condition": {
+          "driving_force": "pressure_gradient",
+          "value": 10132.5
+        }
+      }
+    },
+    "sample":{
+      "sample_name": "Berea_100x100x100",
+      "inlet_links_identification": {
+        "pressure_threshold_method": "inlet_nodes"
+      },
+      "parameters": {
+        "initial_porosity": {
+          "porosity_method" : "calculation"
+        },
+        "minimum_link_radius": 0.5,
+        "sample_origin": [0, 0, 0],
+        "sample_size": [100, 100, 100],
+        "voxel_size": 2.25e-6
+      }
+    },
+    "phases": {
+      "liquid": {
+        "liquid_name": "brine",
+        "viscosity_behaviour": "constant",
+        "properties": {
+          "liquid_density": 1100,
+          "liquid_dynamic_viscosity": 1.5e-3
+        }
+      },
+      "solid": {
+        "solid_name": "calcite",
+        "properties": {
+          "solid_density": 2710,
+          "solid_molar_weight": 0.1
+        }
+      }
+    },
+    "processes": {
+      "deposition": {
+        "clogging": {
+          "simulation_stop_criteria": "inlet_links"
+        },
+        "model": {
+          "name": "jager2017",
+          "deposition_method": "geometry_flow_dependent"
+        },
+        "parameters": {
+          "deposition_coefficient": 0.017,
+          "deposition_reaction_time": 1.7e-6,
+          "erosion_coefficient": 0.017,
+          "relative_concentration": 1
+        },
+        "deposition_references": [
+          "Jäger, R., et al. (2017)",
+          "Matias A., et al. (2021)"
+        ]
+      },
+      "erosion": {
+        "model": {
+          "name": "jager2017",
+          "erosion_method": "geometry_flow_dependent"
+        },
+        "parameters": {
+          "erosion_coefficient": 0.017
+        },
+        "erosion_references": [
+          "Jäger, R., et al. (2017)",
+          "Matias A., et al. (2021)"
+        ]
+      }
+    }
+  }
+}
