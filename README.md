@@ -72,3 +72,28 @@ If you would like to see the detailed LICENSE click [here](LICENSE).
 # SPDX-License-Identifier: Apache-2.0
 #
 ```
+
+Related datasets
+------------
+
+**Digital Rock datasets**: Microtomography datasets available in the [Digital Rocks Portal](https://dx.doi.org/10.17612/f4h1-w124) and [Figshare](https://doi.org/10.25452/figshare.plus.21375565).
+
+Related repositories
+------------
+
+**Digital Rock**: The code used to obtain the CNM representations of the rock samples is available at <https://github.com/IBM/flowdiscovery-digital-rock>. Additional algorithms used for processing and segmenting the raw grayscale images, are available as Python code at <https://github.com/IBM/microCT-Dataset>.
+ 
+**Flow Simulator**: Code for running multi-phase flow simulations and the geometry evolution due to pore-scale processes in porous media modeled as network of capillaries is available at <https://github.com/IBM/flowdiscovery-simulator>. Code for running simulations using the Docker backend of ST4SD is available at <https://github.com/st4sd/flow-simulator-experiment>.
+
+Related Publications
+------------
+* “Optimizing carbon dioxide trapping for geological storage.” Jaione Tirapu Azpiroz, et al., 2023. arXiv preprint arXiv:2312.13512, <https://doi.org/10.48550/arXiv.2312.13512>
+* “Geometry evolution of porous media due to coupled reactive-transport processes within capillary networks.” David Alejandro Lazo Vasquez, et al. ACS Fall 2023. <https://doi.org/10.1021/scimeetings.3c10238>
+* “Modeling carbon dioxide trapping at microscopic pore scale with digital rock representations.” Jaione Tirapu-Azpiroz et al. Proceedings of the SPIE, 12374-14, 2023. <https://doi.org/10.1117/12.2650243>
+* “Full scale, microscopically resolved tomographies of sandstone and carbonate rocks augmented by experimental porosity and permeability values.” Esteves Ferreira, M., et al. Sci Data 10, 368 (2023). <https://doi.org/10.1038/s41597-023-02259-z>
+* “Full scale, microscopically resolved tomographies of sandstone and carbonate rocks augmented by experimental porosity and permeability values.” Esteves Ferreira, Matheus, et al. (2022): Figshare+. Dataset. <https://doi.org/10.25452/figshare.plus.21375565.v5>
+* “Cloud-based pore-scale simulator for studying carbon dioxide flow in digital rocks.” Tirapu Azpiroz, Jaione, et al. Proceedings of the 16th Greenhouse Gas Control Technologies Conference (GHGT-16) 23-24 Oct 2022,  <http://dx.doi.org/10.2139/ssrn.4276744>
+* “Micro-computed tomography of sandstone rocks: Raw, filtered and segmented datasets” Everton Lucas-Oliveira, et al. Data in Brief, Volume 41, 2022, 107893, <https://doi.org/10.1016/j.dib.2022.107893>.
+* "Advanced optical on-chip analysis of fluid flow for applications in carbon dioxide trapping," Jaione Tirapu-Azpiroz, et al., Proc. SPIE 11955, 1195507 (2022); <https://doi.org/10.1117/12.2610336>
+* "High accuracy capillary network representation in digital rock reveals permeability scaling functions.” Neumann, R.F., et al. Sci Rep 11, 11370 (2021). <https://doi.org/10.1038/s41598-021-90090-0>
+* "11 Sandstones: raw, filtered and segmented data", R. Neumann, et al. Digital Rocks Portal, 2020. <https://dx.doi.org/10.17612/f4h1-w124>
