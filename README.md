@@ -87,6 +87,8 @@ Related repositories
 
 Related Publications
 ------------
+* "Enhanced carbon dioxide drainage observed in digital rock under intermediate wetting conditions”. Jaione Tirapu Azpiroz, et al. Sci Rep 14, 15852 (2024). <https://doi.org/10.1038/s41598-024-65920-6>
+* “Simulating carbon mineralization at pore scale in capillary networks of digital rock.” David A. Lazo Vasquez, et al., 2024. arXiv preprint arXiv: 2407.04238, <https://doi.org/10.48550/arXiv.2407.04238>
 * “Optimizing carbon dioxide trapping for geological storage.” Jaione Tirapu Azpiroz, et al., 2023. arXiv preprint arXiv:2312.13512, <https://doi.org/10.48550/arXiv.2312.13512>
 * “Geometry evolution of porous media due to coupled reactive-transport processes within capillary networks.” David Alejandro Lazo Vasquez, et al. ACS Fall 2023. <https://doi.org/10.1021/scimeetings.3c10238>
 * “Modeling carbon dioxide trapping at microscopic pore scale with digital rock representations.” Jaione Tirapu-Azpiroz et al. Proceedings of the SPIE, 12374-14, 2023. <https://doi.org/10.1117/12.2650243>
